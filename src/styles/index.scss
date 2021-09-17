@@ -4,10 +4,14 @@ $golden: #c59d5f;
 $navy: #102a42;
 $blue: #617db1;
 
+// Partials
+@use './layout/_nav.scss';
+
 * {
   margin: 0;
   padding: 0;
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue";
 }
 
 body {
@@ -17,23 +21,28 @@ body {
 .item {
   width: 45rem;
   height: 11rem;
+  margin: {
+    left: 5rem;
+    right: 5rem;
+    bottom: 2rem;
+  }
   p {
     color: $blue;
   }
-  h4 {
+  h3 {
     color: black;
     letter-spacing: 0.05em;
   }
   div.header {
     border-bottom: dotted $blue 0.1em;
     padding-bottom: 0.25rem;
-    width: 28.4rem;
+    width: 28.2rem;
     float: right;
     p {
       color: $golden;
       float: right;
     }
-    h4 {
+    h3 {
       float: left;
       color: $navy;
     }
@@ -41,10 +50,52 @@ body {
   img {
     object-fit: cover;
     float: left;
-    border: 0.2em solid $golden;
+    border: 0.3em solid $golden;
     width: 15.2rem;
     height: 95%;
     border-radius: 0.3em;
     margin-right: 1rem;
   }
+}
+
+a.list {
+  color: $golden;
+  cursor: pointer;
+  user-select: none;
+  text-decoration-line: none;
+  justify-content: space-evenly;
+  margin: auto;
+}
+
+a.list:hover {
+  background-color: $golden;
+  padding: {
+    left: 1rem;
+    right: 1rem;
+  }
+  color: white;
+  border-radius: 0.3em;
+}
+
+#centered {
+  text-align: center;
+  margin: {
+    left: auto;
+    right: auto;
+    bottom: 0.4rem;
+  }
+  color: $navy;
+}
+
+h1#centered {
+  margin-top: 1rem;
+}
+
+hr#centered {
+  max-width: 5rem;
+  background-color: $golden;
+  color: $golden;
+  border: none;
+  padding: 0.1rem;
+  margin-top: 0rem;
 }

@@ -1,16 +1,42 @@
-import {useState} from 'react';
+//import {useState} from 'react';
 import Item from './Components/Item';
 import menu from './data';
 
+    function capitalize(string) {
+      let strings = string.split(' ');
+      let fixedString = "";
+        for(let i = 0; i < strings.length; i++){
+          let cap = strings[i][0].toUpperCase();
+          let newString = strings[i].substring(1, string.length);
+          newString = cap + newString
+          if(i === 0) {
+            fixedString = fixedString + newString;
+          } else {
+            fixedString = fixedString + " " + newString;
+          }
+        }
+        console.log(fixedString);
+        return fixedString;
+    }
+      capitalize('hello there');
+
 function App() {
-  //const [data, setData] = useState(menu);
-  //setData([]);
-  console.log(menu[0].img);
 
   return (
     <div className="App">
-      <Item id={menu[0].id} title={menu[0].title} category={menu[0].category} price={menu[0].price} img={menu[0].img} desc={menu[0].desc} />
-      <Item id={menu[1].id} title={menu[1].title} category={menu[1].category} price={menu[1].price} img={menu[1].img} desc={menu[1].desc} />
+      <h1 id="centered">Our Menu</h1>
+      <hr id="centered" />
+      <div className="navDiv">
+        <nav>
+          <a href={"#" + undefined} className="list">All</a>
+          <a href={"#" + undefined} className="list">Breakfast</a>
+          <a href={"#" + undefined} className="list">Lunch</a>
+          <a href={"#" + undefined} className="list">Shakes</a>
+        </nav>
+      </div>
+      {menu.map((item) => {
+        return <Item key={item.id} title={capitalize(item.title)} category={item.category} price={item.price} img={item.img} desc={item.desc} />
+      })}
     </div>
   );
 }
