@@ -27,7 +27,7 @@ body {
 }
 
 .item {
-  width: 45rem;
+  width: 37rem;
   height: 11rem;
   margin-left: 5rem;
   margin-right: 5rem;
@@ -43,7 +43,7 @@ body {
 .item div.header {
   border-bottom: dotted #617db1 0.1em;
   padding-bottom: 0.25rem;
-  width: 28.2rem;
+  width: 58.9%;
   float: right;
 }
 .item div.header p {
@@ -59,7 +59,7 @@ body {
      object-fit: cover;
   float: left;
   border: 0.3em solid #c59d5f;
-  width: 15.2rem;
+  width: 36.5%;
   height: 95%;
   border-radius: 0.3em;
   margin-right: 1rem;
