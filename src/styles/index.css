@@ -1,5 +1,5 @@
 div.navDiv {
-  max-width: 40%;
+  max-width: 35%;
   margin-left: auto;
   margin-right: auto;
 }
@@ -34,10 +34,10 @@ body {
 }
 
 .item {
-  width: 37rem;
+  width: 42rem;
   height: 11rem;
-  margin-left: 5rem;
-  margin-right: 5rem;
+  margin-left: 3rem;
+  margin-right: 1rem;
   margin-bottom: 2rem;
 }
 .item p {
@@ -56,6 +56,7 @@ body {
 .item div.header p {
   color: #c59d5f;
   float: right;
+  font-weight: bold;
 }
 .item div.header h3 {
   float: left;
