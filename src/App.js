@@ -1,4 +1,4 @@
-//import {useState} from 'react';
+import {useState, useEffect} from 'react';
 import Item from './Components/Item';
 import menu from './data';
 
@@ -21,6 +21,13 @@ import menu from './data';
       capitalize('hello there');
 
 function App() {
+  const [data, setData] = useState();
+  useEffect(() => {
+    setData(menu);
+  }, []);
+  const filterData = (category) => {
+        setData(menu.filter((item) => item.category === category));
+  }
 
   return (
     <div className="App">
@@ -28,14 +35,14 @@ function App() {
       <hr id="centered" />
       <div className="navDiv">
         <nav>
-          <a href={"#" + undefined} className="list">All</a>
-          <a href={"#" + undefined} className="list">Breakfast</a>
-          <a href={"#" + undefined} className="list">Lunch</a>
-          <a href={"#" + undefined} className="list">Shakes</a>
+          <a href={"#" + undefined} onClick={setData(menu)} className="list">All</a>
+          <a href={"#" + undefined} onClick={filterData('lunch')} className="list">Breakfast</a>
+          <a href={"#" + undefined} onClick={filterData('breakfast')} className="list">Lunch</a>
+          <a href={"#" + undefined} onClick={filterData('shakes')} className="list">Shakes</a>
         </nav>
       </div>
       <div className="grid">
-        {menu.map((item) => {
+        {data.map((item) => {
           return <Item key={item.id} title={capitalize(item.title)} category={item.category} price={item.price} img={item.img} desc={item.desc} />
         })}
       </div>
