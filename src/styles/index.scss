@@ -18,6 +18,13 @@ body {
   background-color: $background;
 }
 
+.grid {
+  display: flex;
+  flex-grow: 2;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
 .item {
   width: 37rem;
   height: 11rem;

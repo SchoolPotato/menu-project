@@ -34,9 +34,11 @@ function App() {
           <a href={"#" + undefined} className="list">Shakes</a>
         </nav>
       </div>
-      {menu.map((item) => {
-        return <Item key={item.id} title={capitalize(item.title)} category={item.category} price={item.price} img={item.img} desc={item.desc} />
-      })}
+      <div className="grid">
+        {menu.map((item) => {
+          return <Item key={item.id} title={capitalize(item.title)} category={item.category} price={item.price} img={item.img} desc={item.desc} />
+        })}
+      </div>
     </div>
   );
 }
