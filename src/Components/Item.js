@@ -1,14 +1,14 @@
-import image from '../images/item-1.jpeg';
+// import image from '../images/item-1.jpeg';
 
-const Item = () => {
+const Item = ({title, price, img, desc}) => {
     return (
         <div className="item">
-            <img src={image} alt="whoops" />
+            <img src={img} alt="whoops" />
             <div className="header">
-                <p>$15</p>
-                <h4>Hello There</h4>
+                <p>${price}</p>
+                <h4>{title}</h4>
             </div>
-            <p>hello there</p>
+            <p>{desc}</p>
         </div>
     )
 }
